@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de Mascota</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="animal-p.component.css" rel="stylesheet"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+
+<div class="card">
+  <h2 class="text-center mb-4">Detalles de Mascota</h2>
+  <form>
+    <!-- Campo para el Nombre de la Mascota -->
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Nombre de la Mascota" required>
+    </div>
+    <!-- Campo para la Raza de la Mascota -->
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Raza de la Mascota" required>
+    </div>
+    <!-- Campo para la Edad de la Mascota -->
+    <div class="form-group">
+      <input type="number" class="form-control" placeholder="Edad de la Mascota" required>
+    </div>
+    <!-- Opción para indicar si la mascota está vacunada -->
+    <div class="form-group form-check checkbox">
+      <input type="checkbox" class="form-check-input" id="vacunado">
+      <label class="form-check-label" for="vacunado">¿Vacunado?</label>
+    </div>
+    <!-- Contenedor de botones para cambiar nombre y edad -->
+    <div class="button-container">
+      <button type="submit" class="btn btn-custom">Cambiar Nombre</button>
+      <button type="submit" class="btn btn-custom">Cambiar Edad</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

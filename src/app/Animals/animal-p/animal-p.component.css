@@ -1,0 +1,50 @@
+
+/* styles.css */
+
+/* Cambiar el color de fondo de los campos de entrada y el color del texto */
+input.form-control {
+  background-color: #F5F5F5; /* Fondo gris claro */
+  color: #000; /* Texto negro */
+  border: none; /* Quitar el borde */
+  margin-bottom: 10px; /* Espacio adicional entre los campos */
+}
+
+/* Cambiar el color del texto de las etiquetas */
+label.form-check-label {
+  color: #000; /* Texto negro */
+}
+
+/* Estilos para la tarjeta */
+.card {
+  width: 400px; /* Ancho de la tarjeta */
+  margin: 100px auto; /* Margen superior e inferior con auto a los lados */
+  padding: 30px; /* Espaciado interno */
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+}
+
+/* Espacio entre los grupos de formulario */
+.form-group {
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos para los botones personalizados */
+.btn-custom {
+  width: 45%; /* Ancho del botón */
+  background-color: black; /* Color de fondo */
+  border: 1px solid black; /* Borde */
+  color: white; /* Color del texto */
+}
+
+/* Estilos al pasar el cursor sobre los botones */
+.btn-custom:hover {
+  background-color: #808080; /* Color de fondo al pasar el cursor */
+  border: 1px solid #808080; /* Borde al pasar el cursor */
+  color: black; /* Cambio de color del texto al pasar el cursor */
+}
+
+/* Contenedor de botones */
+.button-container {
+  display: flex; /* Mostrar como flex */
+  justify-content: space-between; /* Distribución espaciada entre los botones */
+}

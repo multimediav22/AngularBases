@@ -1,0 +1,11 @@
+<h3>List</h3>
+<h3>Animal Clean<small
+  class="text-danger">{{deletedAnimal}}</small></h3>
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of Animals"
+  class="list-group-item">{{name}}</li>
+  <button
+  (click)="removeLastAnimal()" class="btn btn-outline-danger">
+    Clean Animal
+  </button>
+</ul>
