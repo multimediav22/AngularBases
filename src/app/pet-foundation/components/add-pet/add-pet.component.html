@@ -1,0 +1,21 @@
+
+<h4>Form</h4>
+    <form class="row"(ngSubmit)="emitPet()">
+      <input type="text"[(ngModel)]="pet.name"
+      name="name"
+       class="form-control mb-2"
+       placeholder="Pet Name">
+      <input type="text"[(ngModel)]="pet.breed"
+      name="breed"
+      class="form-control mb-2"
+      placeholder="Pet Breed">
+      <input type="text"[(ngModel)]="pet.Age"
+      name="Age"
+      class="form-control mb-2"
+      placeholder="Pet Age">
+
+
+      <button type="submit" class="btn btn-primary">Agregar
+      </button>
+      <!-- <pre>{{pet | json}}</pre>-->
+    </form>

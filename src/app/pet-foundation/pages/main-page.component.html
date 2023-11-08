@@ -1,0 +1,15 @@
+<h1>PetFoundation</h1>
+<hr>
+<div class="row justify-content-center"> <!-- Agregar la clase justify-content-center para centrar horizontalmente -->
+  <div class="col-md-6">
+    <!-- Contenido del primer div - Listado -->
+    <app-petFoundation-list [petsList]="pets" (onDelete)="onDeletePet($event)"></app-petFoundation-list>
+  </div>
+  <div class="col-md-6">
+    <!-- Contenido del segundo div - Formulario -->
+    <app-add-pet-add-pet (onNewPet)="onNewPet($event)"></app-add-pet-add-pet>
+    <div class="mt-3">
+
+    </div>
+  </div>
+</div>
