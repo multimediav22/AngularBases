@@ -3,5 +3,7 @@ export interface Pet {
   name: string;
   Age: number;
   breed: string;
+  imageUrl?: string;
+
 
 }

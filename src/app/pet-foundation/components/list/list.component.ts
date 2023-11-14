@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { Pet } from '../../interfaces/pet.interface';
 
 @Component({
@@ -7,28 +7,27 @@ import { Pet } from '../../interfaces/pet.interface';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  @Input()
-  public petsList: Pet[] = [
-    {
-      name: 'Antonio',
-      breed: 'Dog',
-      Age: 7
-    },
-    {
-      name: 'Manche',
-      breed: 'Dog',
-      Age: 5
-    }
-  ];
+  @Input() public petsList: Pet[] = [];
+  @Output() public onDelete: EventEmitter<string> = new EventEmitter();
 
-  @Output()
-  public onDelete: EventEmitter<string> = new EventEmitter();
+  constructor(private cdr: ChangeDetectorRef) {}
 
   onDeletePet(id?: string): void {
     if (!id) return;
     console.log({ id });
 
-      this.onDelete.emit(id); //! Emitir el evento después de borrar
-    }
+    this.onDelete.emit(id);
   }
 
+  onImageChange(event: any, pet: Pet): void {
+    const file = event.target.files[0];
+    if (file) {
+      // Lógica para manejar el archivo seleccionado y obtener la URL
+      const imageUrl = URL.createObjectURL(file);
+      pet.imageUrl = imageUrl;
+      console.log('Imagen actualizada:', pet.imageUrl);
+      // Forzar la detección de cambios
+      this.cdr.detectChanges();
+    }
+  }
+}

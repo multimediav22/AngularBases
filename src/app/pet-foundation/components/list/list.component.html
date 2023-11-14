@@ -1,20 +1,23 @@
-<!-- Título del listado -->
-<h4>PetsList1</h4>
+<!-- Título de la lista -->
+<h4 class="text-2xl font-bold mb-8 mt-8">PetsList</h4>
 
 <!-- Lista de elementos con estilos aplicados -->
-<ul class="list-group mr-5">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <!-- Bucle para mostrar cada elemento en la lista -->
-  <li *ngFor="let pet of petsList; let i = index" class="list-group-item d-flex justify-content-between align-items-center">
-    <span>
-      <!-- Número del elemento -->
-      <span class="text-primary">{{ i + 1 }}.&nbsp;</span>
-      <!-- Detalles de la mascota -->
-      <span>{{ pet.name }} - </span>
-      <strong>breed:&nbsp;</strong>
-      <span>{{ pet.breed }} - </span>
-      <strong>Age:&nbsp;</strong>{{ pet.Age }}
-    </span>
+  <div *ngFor="let pet of petsList; let i = index" class="bg-white p-4 rounded-lg shadow-md mb-8">
+    <!-- Número del elemento -->
+    <span class="text-primary">{{ i + 1 }}.&nbsp;</span>
+
+    <!-- Imagen redondeada -->
+    <!--div class="rounded-full overflow-hidden mb-4">
+    <!--img [src]="pet.imageUrl"s alt="{{ pet.name }}" class="w-full h-full object-cover" />
+    </div> -->
+
+    <!-- Detalles de la mascota -->
+    <h5 class="text-lg font-semibold">{{ pet.name }}</h5>
+    <p class="text-gray-600">Raza: {{ pet.breed }}</p>
+    <p class="text-gray-600">Edad: {{ pet.Age }}</p>
     <!-- Botón para eliminar el elemento -->
-    <button (click)="onDeletePet(pet.id)" class="btn btn-danger btn-sm">X</button>
-  </li>
-</ul>
+    <button (click)="onDeletePet(pet.id)" class="mt-4 bg-black text-blue-500 px-4 py-2 rounded-md">Eliminar</button>
+  </div>
+</div>

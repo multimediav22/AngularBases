@@ -10,12 +10,23 @@ export class AddPetComponent {
   // Se define un EventEmitter para emitir eventos cuando se agrega una nueva mascota
   @Output() onNewPet: EventEmitter<Pet> = new EventEmitter<Pet>();
 
-  // Se inicializa el objeto pet con valores predeterminados
+  // Se inicializa el objeto pet con valores predeterminados, incluyendo imageUrl
   public pet: Pet = {
     name: '',
     breed: '',
-    Age: 0
+    Age: 0,
+    imageUrl: '' // Agrega la propiedad imageUrl con un valor inicial vacío
   };
+
+  // Propiedades para la imagen
+  public selectedImageName: string | undefined;
+
+  // Método para manejar el cambio de imagen
+  onImageChange(event: any): void {
+    // Lógica para manejar el cambio de imagen
+    // Por ejemplo, puedes obtener el nombre de la imagen
+    this.selectedImageName = event.target.files[0]?.name;
+  }
 
   // Método para emitir el evento al agregar una mascota nueva
   emitPet(): void {
@@ -28,6 +39,7 @@ export class AddPetComponent {
       this.pet.name = '';
       this.pet.breed = '';
       this.pet.Age = 0;
+      this.pet.imageUrl = ''; // Reinicia también la propiedad imageUrl
     }
   }
 }
